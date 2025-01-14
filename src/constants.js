@@ -1,3 +1,5 @@
+import { QueryStats as QueryStatsIcon, Timer as TimerIcon, TrendingUp as TrendingUpIcon, TrendingDown as TrendingDownIcon } from '@mui/icons-material';
+  
 export const YEARS = ["2023", "2024", "2025" ]; 
 
 export const STEPS = ["פרטים אישיים", "פרטי התחברות"];
@@ -61,4 +63,31 @@ export const SUPPORT_LINKS = [
     { title: 'שאלות נפוצות', href: '#' },
     { title: 'צור קשר', href: '#' },
     { title: 'מדיניות פרטיות', href: '#' },
+];
+
+export const STATS = [
+    { 
+      value: '98%', 
+      label: 'דיוק בניתוח נתונים',
+      icon: QueryStatsIcon,
+      iconColor: 'default'
+    },
+    { 
+      value: '24/7', 
+      label: 'מעקב בזמן אמת',
+      icon: TimerIcon,
+      iconColor: 'default'
+    },
+    { 
+      value: '+15%', 
+      label: 'תשואה ממוצעת',
+      icon: TrendingUpIcon,
+      iconColor: 'green'
+    },
+    { 
+      value: '-25%', 
+      label: 'הפחתת הוצאות',
+      icon: TrendingDownIcon,
+      iconColor: 'green'
+    },
 ];
