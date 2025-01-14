@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import ErrorBoundary from "./UI/Error";
 import Transactions from "./Transactions/Transactions";
 import Banner from "./UI/Banner";
+import SideNavBar from "./UI/DrawerModal";
 
 export default function Dashboard() {
 
@@ -13,6 +14,7 @@ export default function Dashboard() {
         <>
             <Banner/>
 
+            <SideNavBar/>
             <Box 
                 margin={"auto"}
                 component={"div"} 

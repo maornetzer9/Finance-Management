@@ -1,7 +1,6 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
-import DrawerModal from "./components/UI/DrawerModal";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import './App.css'
@@ -14,7 +13,6 @@ function App() {
                 <Route path="/register" element={<Register />} />
 
                 {/* Private routes with Drawer */}
-                {/* <Route element={<DrawerModal />}> */}
                     <Route
                         path="/dashboard"
                         element={<PrivateRoute element={Dashboard} />}

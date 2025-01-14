@@ -1,4 +1,8 @@
+import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
 import { QueryStats as QueryStatsIcon, Timer as TimerIcon, TrendingUp as TrendingUpIcon, TrendingDown as TrendingDownIcon } from '@mui/icons-material';
+
   
 export const YEARS = ["2023", "2024", "2025" ]; 
 
@@ -90,4 +94,23 @@ export const STATS = [
       icon: TrendingDownIcon,
       iconColor: 'green'
     },
+];
+
+
+export const NAV_ITEMS = [
+  { 
+    name: "דף הבית", 
+    icon: HomeIcon, 
+    path: "/",
+  },
+  { 
+    name: "אודות", 
+    icon: InfoIcon, 
+    path: "/about",
+  },
+  { 
+    name: "צור קשר", 
+    icon: ContactMailIcon, 
+    path: "/contact",
+  },
 ];
