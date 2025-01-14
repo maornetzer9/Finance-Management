@@ -74,7 +74,8 @@ export const styles = {
     mainTitle: {
         fontWeight: 800,
         mb: 2,
-        background:"linear-gradient(135deg, #FFFFFF 0%, #E2E8FF 50%, #C7D2FE 100%)",
+        background:
+            "linear-gradient(135deg, #FFFFFF 0%, #E2E8FF 50%, #C7D2FE 100%)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         backgroundClip: "text",
@@ -103,7 +104,8 @@ export const styles = {
         mb: 4,
         fontSize: { xs: "1.1rem", md: "1.25rem" },
         fontWeight: 400,
-        background: "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(226,232,255,0.9) 100%)",
+        background:
+            "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(226,232,255,0.9) 100%)",
         WebkitBackgroundClip: "text",
         // WebkitTextFillColor: "transparent",
         lineHeight: 1.7,

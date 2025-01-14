@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { Box, Paper, Typography, TextField, Button, InputAdornment, IconButton, Alert } from "@mui/material";
 import { Mail as MailIcon, Lock as LockIcon, Visibility, VisibilityOff } from "@mui/icons-material";
 import { loginAction } from "../action/users";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocalError } from "../hooks/error";
 import { useAuth } from "../context/AuthProvider";
 
 const Login = () => {
 
+    const { loading } = useSelector((state) => state.userReducer);
     const { setLocalToken } = useAuth();
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -16,10 +17,7 @@ const Login = () => {
     const { localError, setLocalError } = useLocalError();
 
     const [showPassword, setShowPassword] = useState(false);
-    const [formData, setFormData] = useState({
-        email: "",
-        password: "",
-    });
+    const [formData, setFormData] = useState({ email: "", password: "" });
     
     const login = async (e) => {
         e.preventDefault();
@@ -193,7 +191,7 @@ const Login = () => {
                                 py: 1.5,
                             }}
                         >
-                            התחברות
+                            { loading ? 'מתחבר...' : 'התחברות' }
                         </Button>
 
                         <Box sx={{ textAlign: "center", mt: 1 }}>

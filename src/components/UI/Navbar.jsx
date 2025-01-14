@@ -6,7 +6,7 @@ import { styles } from "../../styles/navbar";
 import { NAV_ITEMS } from "../../constants";
 import Logo from "../../assets/Logo.png";
 
-export default function SideNavBar({ children }) {
+export default function Navbar({ children }) {
     const [isOpen, setIsOpen] = useState(false);
     const currentPath = window.location.pathname;
 
