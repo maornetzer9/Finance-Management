@@ -11,7 +11,6 @@ function App() {
         <>
             <Routes>
                 {/* Public routes without Drawer */}
-                <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
 
                 {/* Private routes with Drawer */}
@@ -23,7 +22,7 @@ function App() {
                 {/* </Route> */}
  
                 {/* Default route */}
-                <Route path="/" element={<Navigate to="/login" />} />
+                <Route path="/" element={<Login/>} />
             </Routes>
         </>
     );
