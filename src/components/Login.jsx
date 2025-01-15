@@ -6,6 +6,7 @@ import { loginAction } from "../action/users";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocalError } from "../hooks/error";
 import { useAuth } from "../context/AuthProvider";
+import '../styles/loader.css'
 
 const Login = () => {
 
@@ -191,7 +192,11 @@ const Login = () => {
                                 py: 1.5,
                             }}
                         >
-                            { loading ? 'מתחבר...' : 'התחברות' }
+                            {loading ?                                    
+                            <span className="loading-text"> 
+                            {"מתחבר"}
+                                <span className="dots"></span></span> 
+                            : "התחברות" }                        
                         </Button>
 
                         <Box sx={{ textAlign: "center", mt: 1 }}>
