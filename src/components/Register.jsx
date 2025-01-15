@@ -42,7 +42,7 @@ const Register = () => {
         const { code, message } = await dispatch(registerAction(formData, dispatch));
         if(code !== 200) return setLocalError(message);
 
-        navigate("/login");
+        navigate("/");
     };
 
     const renderTextField = ( label, type, value, onChange, iconStart, iconEnd = null ) => (
