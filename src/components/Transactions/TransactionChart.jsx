@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import { Chart } from "chart.js/auto";
 import { motion } from 'framer-motion';
 import { headContentAnimation } from "../../utils/motion";
@@ -8,6 +8,8 @@ import Loader from "../UI/Loader";
 
 export default function TransactionChart() {
     const { transactions, loading } = useSelector((state) => state.transactionsReducer);
+
+    const isMobile = useMediaQuery("(max-width:687px)");
 
     const chartRef = useRef(null);
     const chartInstanceRef = useRef(null);
@@ -72,6 +74,7 @@ export default function TransactionChart() {
                 },
                 plugins: {
                     legend: {
+                        display: true,
                         position: "left",
                         labels: {
                             padding: 20,

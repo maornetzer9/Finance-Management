@@ -13,6 +13,7 @@ export default function NewTransaction() {
     return (
         <Box component={'div'}>
         <Box
+            mb={2}
             display="flex"
             flexDirection="column"
             alignItems="flex-start"

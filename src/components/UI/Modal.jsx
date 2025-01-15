@@ -107,9 +107,7 @@ export default function Modal({ open, onClose, onSubmit, title, onChangeHandler 
                             name="createdAt"
                             type="date"
                             fullWidth
-                            defaultValue={
-                                new Date().toISOString().split("T")[0]
-                            }
+                            defaultValue={new Date().toISOString().split("T")[0]}
                             InputLabelProps={{ shrink: true }}
                             inputProps={{ style: { textAlign: "right" } }}
                             onChange={onChangeHandler}

@@ -5,7 +5,7 @@ import { styles } from "../../styles/banner";
 import { STATS } from "../../constants";
 
 const Banner = () => {
-    
+
     const isMobile = useMediaQuery("(max-width:687px)");
 
     return (

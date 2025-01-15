@@ -24,8 +24,9 @@ export const FORM_FIELDS = [
 export const FORM_FIELDS_TRANSACTIONS = [
     { label: "שם בית עסק", name: "businessName", type: "text", required: true},
     { label: "סכום בש\"ח", name: "amount", type: "number", required: true },
+    // { label: "סכום עסקה", name: "chargedAmount", type: "number", required: true },
     { label: "סוג עסקה", name: "transactionType", type: "text", required: true },
-    { label: "מועד חיוב", name: "chargeDate", type: "date", required: true },
+    { label: "מועד חיוב", name: "createdAt", type: "date", required: true },
     // { label: "תאריך עסקה", name: "transactionDate", type: "date", required: true },
     { label: "הערות", name: "notes", type: "text", required: false },
     { label: "פעולות", name: "actions", type: "none", required: false },
@@ -95,7 +96,6 @@ export const STATS = [
       iconColor: 'green'
     },
 ];
-
 
 export const NAV_ITEMS = [
   { 

@@ -20,12 +20,12 @@ export default function Dashboard() {
                 component={"div"} 
                 width={{xs:"90%", md:"70%"}} 
             >
+                <ErrorBoundary>
                 <Transactions/>
                 <Investments/>
-                <ErrorBoundary>
                 <Assets/>
-                </ErrorBoundary>
                 <Footer/>
+                </ErrorBoundary>
 
             </Box>
         </>

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TableFooter, IconButton, MenuItem, Alert, Menu, FormControl, InputLabel, Select } from "@mui/material";
-import { Delete as DeleteIcon, Edit as EditIcon, MoreVert as MoreVertIcon } from "@mui/icons-material";
+import {  Delete as DeleteIcon,  Edit as EditIcon,  MoreVert as MoreVertIcon } from "@mui/icons-material";
 import { deleteTransactionAction, editTransactionAction } from "../../action/transactions";
 import { FORM_FIELDS_TRANSACTIONS, MONTHS, TRANSACTION_INFO_MESSAGE } from "../../constants";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,17 +27,10 @@ export default function TransactionTable() {
 
     const editTransaction = useCallback(
         async (formData) => {
-            const updatedTransaction = _.merge(
-                _.cloneDeep(selectedData),
-                formData
-            );
+            const updatedTransaction = _.merge(_.cloneDeep(selectedData), formData);  
+            if (_.isEqual(selectedData, updatedTransaction)) return setLocalError("לא היו שינוים במסמך שנערך");  
 
-            if (_.isEqual(selectedData, updatedTransaction))
-                return setLocalError("לא היו שינוים במסמך שנערך");
-
-            const { code, message } = await dispatch(
-                editTransactionAction(updatedTransaction)
-            );
+            const { code, message } = await dispatch(editTransactionAction(updatedTransaction));
             if (code !== 200) setLocalError(message);
             setSelectedData(null);
         },
@@ -45,10 +38,13 @@ export default function TransactionTable() {
     );
 
     const deleteTransaction = async (id) => {
-        try {
+        try 
+        {
             await dispatch(deleteTransactionAction(id, dispatch));
             handleMenuClose();
-        } catch (err) {
+        } 
+        catch(err) 
+        {
             console.error(err.message);
         }
     };
@@ -69,9 +65,9 @@ export default function TransactionTable() {
             >
                 <InfoButton message={TRANSACTION_INFO_MESSAGE.message} />
 
-
                 <Box
                     display="flex"
+                    flexWrap={{ xs: "wrap", md: "nowrap" }}
                     justifyContent="space-between"
                     alignItems="center"
                     sx={{ p: 5 }}
@@ -83,12 +79,12 @@ export default function TransactionTable() {
                         flexDirection="row"
                         justifyContent="flex-start"
                         alignItems="center"
-                        sx={{ flex: 1 }}
+                        sx={{ flex: 1, mt: { xs: 3, md: 0 } }}
                     >
                             <TransactionFile/>
                     </Box>
 
-                    <FormControl sx={{ minWidth: 120 }}>
+                    <FormControl sx={{ minWidth: 120, mt: { xs: 2, md: 3 }, margin: 'auto' }}>
                         <InputLabel id="month-select-label">בחר חודש</InputLabel>
                         <Select
                             labelId="month-select-label"
@@ -110,8 +106,8 @@ export default function TransactionTable() {
                 <TableContainer
                  sx={{
                     minHeight: "100px", 
-                    maxHeight: "250px", // Set maximum height for the table container
-                    overflowY: "auto", // Enable vertical scrolling within the container
+                    maxHeight: "250px", 
+                    overflowY: "auto", 
                     backgroundColor: "#fff",
                     borderRadius: "8px",
                 }}
@@ -157,20 +153,15 @@ export default function TransactionTable() {
                                         <TableCell align="right">
                                             {transaction?.amount?.toLocaleString()}₪
                                         </TableCell>
+                                        {/* <TableCell align="right">
+                                            {transaction?.chargedAmount?.toLocaleString()}₪
+                                        </TableCell> */}
                                         <TableCell align="right">
                                             {transaction?.transactionType}
                                         </TableCell>
                                         <TableCell align="right">
                                             {transaction?.transactionDate}
                                         </TableCell>
-                                        {/* {transaction.chargeDate !== null &&  */}
-                                            {/* <TableCell
-                                                className="numbers"
-                                                align="right"
-                                            >
-                                                {transaction?.chargeDate}
-                                            </TableCell> */}
-                                        {/* } */}
                                         <TableCell align="right">
                                             {transaction?.notes}
                                         </TableCell>

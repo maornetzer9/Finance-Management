@@ -126,7 +126,6 @@ export const styles = {
         },
     },
 
-    // Update stat box colors
     statBox: {
         bgcolor: "rgba(255, 255, 255, 0.08)",
         p: 3,
@@ -165,6 +164,7 @@ export const styles = {
         gap: 3,
         animation: `${floatAnimation} 5s ease-in-out infinite`,
     },
+    
     greenIcon: {
         fontSize: 32,
         mb: 1,

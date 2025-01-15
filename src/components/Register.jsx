@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Paper, Typography, TextField, Button, InputAdornment, IconButton, Alert, Stepper, Step, StepLabel } from "@mui/material";
-import {
-    Mail as MailIcon,
-    Lock as LockIcon,
-    Person as PersonIcon,
-    Visibility,
-    VisibilityOff,
-} from "@mui/icons-material";
+import { Mail as MailIcon, Lock as LockIcon, Person as PersonIcon, Visibility, VisibilityOff } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { STEPS } from "../constants";
 import { registerAction } from "../action/users";
@@ -231,7 +225,7 @@ const Register = () => {
                                 >
                                     כבר יש לך חשבון?{" "}
                                     <Button
-                                        onClick={() => navigate("/login")}
+                                        onClick={() => navigate("/")}
                                         sx={{
                                             color: "#6366f1",
                                             textTransform: "none",
